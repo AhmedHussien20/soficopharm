@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
 import { IPerson } from '../Contracts/IUserLogin';
 const API_URL = 'https://tekdi-challenges.appspot.com/api/People';
 @Injectable()
@@ -17,6 +18,9 @@ export class UserLoginService{
         return this.http.post(API_URL,pesron).toPromise();
     }
     Edit(pesron:IPerson,Id:number){
-        return this.http.put(API_URL+'/'+Id,pesron).toPromise();
+        return this.http.put(API_URL+`/${Id}`,pesron).toPromise();
+    }
+    getById(Id:number):Observable<IPerson>{
+        return this.http.get<IPerson>(API_URL+`/${Id}`);
     }
 }

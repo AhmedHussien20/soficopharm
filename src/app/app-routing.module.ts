@@ -18,7 +18,7 @@ const routes: Routes = [
 
   } ,
   {
-    path:"Edit/:Id",
+    path:"Edit/:id",
     data: { mode: "edit" },
     component:PersonFormComponent
 

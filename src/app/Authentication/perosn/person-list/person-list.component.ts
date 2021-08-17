@@ -28,4 +28,8 @@ export class PersonListComponent implements OnInit {
    this.router.navigate(['/Add']);
   }
 
+  edit(per:any){
+    console.log(per.id);
+     this.router.navigate(['/Edit/'+per.id]);
+  }
 }

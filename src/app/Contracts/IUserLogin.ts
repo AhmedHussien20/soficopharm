@@ -1,7 +1,7 @@
 
 
 export interface IPerson{
-    
+     
     name:string;
     country:string;
     dob:string;

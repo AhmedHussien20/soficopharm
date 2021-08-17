@@ -15,11 +15,11 @@
             <div class="p-fluid p-formgrid p-grid">
                 <div class="p-field p-col-12 p-md-6">
                     <label for="name">Name</label>
-                    <input id="name" type="text" formControlName="name" pInputText>
+                    <input id="name" [(ngModel)]="personRequest.name"  type="text" formControlName="name" pInputText>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
                     <label for="email">Email</label>
-                    <input id="email" type="text" formControlName="email" pInputText>
+                    <input id="email"  [(ngModel)]="personRequest.email" type="text" formControlName="email" pInputText>
                 </div>
                 <div class="p-field p-col-12 p-col-12 p-md-6">
                     <label for="dob">Birth Date</label>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="p-field p-col-12 p-col-12 p-md-6">
                     <label for="country">Country</label>
-                    <input id="country" type="text" formControlName="country" pInputText>
+                    <input id="country" type="text" [(ngModel)]="personRequest.country" formControlName="country" pInputText>
                 </div>
             </div>
         </form>
