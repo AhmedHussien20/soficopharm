@@ -1,0 +1,31 @@
+<p-card header="Person List">
+     
+    <p-toolbar>
+        <div class="p-toolbar-group-left">
+        <p-button (click)="Create()" icon="pi pi-plus" class="p-mr-2" label=" New "></p-button>
+        </div>
+     </p-toolbar>
+    <p-table   [value]="person">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>country</th>
+                <th>BirthDate</th>
+                <th>Email</th>
+                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-person>
+            <tr>
+                <td><a [routerLink]="['../Edit/person.Id']">{{person.name}}</a></td>
+                <td><img [src]="person.avatar" [alt]="person.name" width="100" class="p-shadow-4" /></td>
+                <td>{{person.country }}</td>
+                <td>{{person.dob }}</td>
+                <td>{{person.email }}</td>
+                
+            </tr>
+        </ng-template>
+    </p-table>
+    <div *ngIf="person.length < 1">There's No Record's</div>
+</p-card>

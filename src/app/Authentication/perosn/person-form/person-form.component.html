@@ -1,0 +1,35 @@
+<p-panel header="Person Add">
+    
+    <p-toolbar>
+        <div class="p-toolbar-group-left">
+            
+            <p-button (click)="Submit()" [disabled]="!pesronForm.valid" class="p-mr-2" label="Save"></p-button>
+            &nbsp;&nbsp;
+
+            <p-button (click)="goback()" label="Back" class="p-mr-2" ></p-button>
+
+        </div>
+     </p-toolbar>
+    <div class="card">
+        <form [formGroup]="pesronForm">
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" formControlName="name" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" formControlName="email" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-col-12 p-md-6">
+                    <label for="dob">Birth Date</label>
+                    <p-calendar inputId="basic" [(ngModel)]="date1" formControlName="dob"></p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-col-12 p-md-6">
+                    <label for="country">Country</label>
+                    <input id="country" type="text" formControlName="country" pInputText>
+                </div>
+            </div>
+        </form>
+    </div>
+</p-panel>
