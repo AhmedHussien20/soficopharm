@@ -21,7 +21,7 @@
                 <td><a (click)="edit(person)">{{person.name}}</a></td>
                 <td><img [src]="person.avatar" [alt]="person.name" width="100" class="p-shadow-4" /></td>
                 <td>{{person.country }}</td>
-                <td>{{person.dob }}</td>
+                <td>{{getage(person.dob) }}</td>
                 <td>{{person.email }}</td>
                 
             </tr>

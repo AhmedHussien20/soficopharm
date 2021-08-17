@@ -32,4 +32,11 @@ export class PersonListComponent implements OnInit {
     console.log(per.id);
      this.router.navigate(['/Edit/'+per.id]);
   }
+  getage(age:number):number{
+    if(age){
+      const convertAge = new Date(age);
+      const timeDiff = Math.abs(Date.now() - convertAge.getTime());
+      return Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+    }
+  }
 }
